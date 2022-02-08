@@ -24,5 +24,11 @@ class DB {
         $result =   $this->db->query($query);
         return $result;
     }
+    // Get all users
+    public function getUsers() {
+        $query  =   "SELECT * FROM user ORDER BY LastModified DESC, CreatedOn DESC;";
+        $result =   $this->db->query($query);
+        return $result;
+    }
 }
 ?>

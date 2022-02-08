@@ -82,7 +82,7 @@
                 </li>
                 <li class="app-sidebar__heading">Users</li>
                 <li>
-                    <a href="#">
+                    <a href="index.php?page=manage-users">
                         <i class="metismenu-icon pe-7s-mouse"></i>
                         Manage Users
                     </a>
