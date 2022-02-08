@@ -69,7 +69,7 @@
                 </li>
                 <li class="app-sidebar__heading">Invoice</li>
                 <li>
-                    <a href="#">
+                    <a href="index.php?page=manage-invoices">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Manage Invoices
                     </a>

@@ -18,5 +18,11 @@ class DB {
         $result =   $this->db->query($query);
         return $result;
     }
+    // Get all invoices
+    public function getInvoices() {
+        $query  =   "SELECT * FROM invoice ORDER BY LastModified DESC, CreatedOn DESC;";
+        $result =   $this->db->query($query);
+        return $result;
+    }
 }
 ?>
