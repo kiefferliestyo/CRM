@@ -1,10 +1,7 @@
-<?php
-$products   =   $db->getProducts();
-?>
 <div class="app-page-title">
     <div class="page-title-wrapper">
         <div class="page-title-heading">
-            <div>Manage Products</div>
+            <div>Manage Customers</div>
         </div>
     </div>
 </div>
@@ -15,10 +12,9 @@ $products   =   $db->getProducts();
                 <table class="mb-0 table table-striped">
                     <thead>
                         <tr>
-                            <th>Product ID</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Description</th>
+                            <th>Invoice ID</th>
+                            <th>Customer ID</th>
+                            <th>Total Price</th>
                             <th>Status</th>
                             <th></th>
                             <th></th>
@@ -26,14 +22,13 @@ $products   =   $db->getProducts();
                     </thead>
                     <tbody>
                     <?php
-                    foreach ($products as $product) {
+                    foreach ($invoices as $invoice) {
                     ?>
                         <tr>
-                            <td><?=$product['ProductID']?></td>
-                            <td><?=$product['Name']?></td>
-                            <td>$<?=$product['Price']?></td>
-                            <td><?=$product['Description']?></td>
-                            <td><?=$product['Status']?></td>
+                            <td><?=$invoice['InvoiceID']?></td>
+                            <td><?=$invoice['CustomerID']?></td>
+                            <td>$<?=$invoice['TotalPrice']?></td>
+                            <td><?=$invoice['Status']?></td>
                             <td><button class="btn btn-primary">Edit</button></td>
                             <td><button class="btn btn-danger">Delete</button></td>
                         </tr>

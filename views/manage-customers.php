@@ -1,10 +1,7 @@
-<?php
-$users  =   $db->getUsers();
-?>
 <div class="app-page-title">
     <div class="page-title-wrapper">
         <div class="page-title-heading">
-            <div>Manage Users</div>
+            <div>Manage Customers</div>
         </div>
     </div>
 </div>
@@ -15,10 +12,12 @@ $users  =   $db->getUsers();
                 <table class="mb-0 table table-striped">
                     <thead>
                         <tr>
-                            <th>User ID</th>
-                            <th>Username</th>
+                            <th>Customer ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Date of Birth</th>
                             <th>Email Address</th>
-                            <th>Permissions Level</th>
+                            <th>Phone Number</th>
                             <th>Status</th>
                             <th></th>
                             <th></th>
@@ -26,14 +25,16 @@ $users  =   $db->getUsers();
                     </thead>
                     <tbody>
                     <?php
-                    foreach ($users as $user) {
+                    foreach ($customers as $customer) {
                     ?>
                         <tr>
-                            <td><?=$user['UserID']?></td>
-                            <td><?=$user['Username']?></td>
-                            <td><?=$user['Email']?></td>
-                            <td><?=$user['Permissions']?></td>
-                            <td><?=$user['Status']?></td>
+                            <td><?=$customer['CustomerID']?></td>
+                            <td><?=$customer['FirstName']?></td>
+                            <td><?=$customer['LastName']?></td>
+                            <td><?=$customer['DOB']?></td>
+                            <td><?=$customer['Email']?></td>
+                            <td><?=$customer['PhoneNumber']?></td>
+                            <td><?=$customer['Status']?></td>
                             <td><button class="btn btn-primary">Edit</button></td>
                             <td><button class="btn btn-danger">Delete</button></td>
                         </tr>

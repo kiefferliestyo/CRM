@@ -1,0 +1,3 @@
+<?php
+$products   =   $db->getProducts();
+?>

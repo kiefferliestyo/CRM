@@ -1,10 +1,7 @@
-<?php
-$customers  =   $db->getCustomers();
-?>
 <div class="app-page-title">
     <div class="page-title-wrapper">
         <div class="page-title-heading">
-            <div>Manage Customers</div>
+            <div>Manage Products</div>
         </div>
     </div>
 </div>
@@ -15,12 +12,10 @@ $customers  =   $db->getCustomers();
                 <table class="mb-0 table table-striped">
                     <thead>
                         <tr>
-                            <th>Customer ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Date of Birth</th>
-                            <th>Email Address</th>
-                            <th>Phone Number</th>
+                            <th>Product ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
                             <th>Status</th>
                             <th></th>
                             <th></th>
@@ -28,16 +23,14 @@ $customers  =   $db->getCustomers();
                     </thead>
                     <tbody>
                     <?php
-                    foreach ($customers as $customer) {
+                    foreach ($products as $product) {
                     ?>
                         <tr>
-                            <td><?=$customer['CustomerID']?></td>
-                            <td><?=$customer['FirstName']?></td>
-                            <td><?=$customer['LastName']?></td>
-                            <td><?=$customer['DOB']?></td>
-                            <td><?=$customer['Email']?></td>
-                            <td><?=$customer['PhoneNumber']?></td>
-                            <td><?=$customer['Status']?></td>
+                            <td><?=$product['ProductID']?></td>
+                            <td><?=$product['Name']?></td>
+                            <td>$<?=$product['Price']?></td>
+                            <td><?=$product['Description']?></td>
+                            <td><?=$product['Status']?></td>
                             <td><button class="btn btn-primary">Edit</button></td>
                             <td><button class="btn btn-danger">Delete</button></td>
                         </tr>

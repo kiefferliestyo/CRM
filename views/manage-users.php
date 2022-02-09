@@ -1,10 +1,7 @@
-<?php
-$invoices   =   $db->getInvoices();
-?>
 <div class="app-page-title">
     <div class="page-title-wrapper">
         <div class="page-title-heading">
-            <div>Manage Customers</div>
+            <div>Manage Users</div>
         </div>
     </div>
 </div>
@@ -15,9 +12,10 @@ $invoices   =   $db->getInvoices();
                 <table class="mb-0 table table-striped">
                     <thead>
                         <tr>
-                            <th>Invoice ID</th>
-                            <th>Customer ID</th>
-                            <th>Total Price</th>
+                            <th>User ID</th>
+                            <th>Username</th>
+                            <th>Email Address</th>
+                            <th>Permissions Level</th>
                             <th>Status</th>
                             <th></th>
                             <th></th>
@@ -25,13 +23,14 @@ $invoices   =   $db->getInvoices();
                     </thead>
                     <tbody>
                     <?php
-                    foreach ($invoices as $invoice) {
+                    foreach ($users as $user) {
                     ?>
                         <tr>
-                            <td><?=$invoice['InvoiceID']?></td>
-                            <td><?=$invoice['CustomerID']?></td>
-                            <td>$<?=$invoice['TotalPrice']?></td>
-                            <td><?=$invoice['Status']?></td>
+                            <td><?=$user['UserID']?></td>
+                            <td><?=$user['Username']?></td>
+                            <td><?=$user['Email']?></td>
+                            <td><?=$user['Permissions']?></td>
+                            <td><?=$user['Status']?></td>
                             <td><button class="btn btn-primary">Edit</button></td>
                             <td><button class="btn btn-danger">Delete</button></td>
                         </tr>

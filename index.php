@@ -1,5 +1,5 @@
 <?php
-require_once('classes/DB.php');
+require_once('models/DB.php');
 
 if (empty($_GET['page'])) {
     $page   =   'home';
@@ -9,6 +9,9 @@ else {
 }
 
 $db =   new DB();
+
+// Require the appropriate controller
+require_once('controllers/' . $page . '.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,7 +45,7 @@ $db =   new DB();
                 <?php require_once('templates/sidebar.php'); ?>  
                 <div class="app-main__outer">
                     <div class="app-main__inner">
-                    <?php require_once('pages/' . $page . '.php'); ?>
+                    <?php require_once('views/' . $page . '.php'); ?>
                     <?php // require_once('templates/footer.php'); ?>  
                     </div>
                 </div>

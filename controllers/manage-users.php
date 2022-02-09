@@ -1,0 +1,3 @@
+<?php
+$users  =   $db->getUsers();
+?>
