@@ -27,7 +27,7 @@
                     ?>
                         <tr>
                             <td><?=$product['ProductID']?></td>
-                            <td><?=$product['Name']?></td>
+                            <td><?=$product['ProductName']?></td>
                             <td>$<?=$product['Price']?></td>
                             <td><?=$product['Description']?></td>
                             <td><?=$product['Status']?></td>
