@@ -1,7 +1,18 @@
 <div class="app-page-title">
     <div class="page-title-wrapper">
         <div class="page-title-heading">
-            <div>Add/Edit Customer</div>
+            <div>
+                Add/Edit Customer
+                <?php
+                if (!empty($insertError)) {
+                ?>
+                <div class="page-title-subheading errorText">
+                    <?=$insertError?>
+                </div>
+                <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
 </div>

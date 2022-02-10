@@ -1,5 +1,4 @@
 <?php
-//
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     // Require the InputValidation class
     require_once('./models/InputValidation.php');
@@ -31,9 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
                 'PhoneNumber'   =>  $phoneNumber
             );
             // Insert data to the DB
-            $db->addCustomer($data);
-            // Redirect to 'Manage Customers' page
-            header('Location: index.php?page=manage-customers');
+            $success    =   $db->addCustomer($data);
+            // Check if the insert was successful or not
+            if ($success) {
+                // Redirect to 'Manage Customers' page
+                header('Location: index.php?page=manage-customers');
+            }
+            else {
+                $insertError    =    "The customer was not added successfully.";
+            }
         }
     }
     else {
