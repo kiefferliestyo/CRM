@@ -1,15 +1,15 @@
 <?php
+// Require the DB class file
 require_once('models/DB.php');
-
+// Instantiate the DB
+$db =   new DB();
+// Set the current page value based on the $_GET variable's value
 if (empty($_GET['page'])) {
     $page   =   'home';
 }
 else {
     $page   =   $_GET['page'];
 }
-
-$db =   new DB();
-
 // Require the appropriate controller
 require_once('controllers/' . $page . '.php');
 ?>
