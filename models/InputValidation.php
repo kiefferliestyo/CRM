@@ -50,6 +50,21 @@ class InputValidation {
         }
         return trim(htmlspecialchars($value));
     }
+    // Checks if value is a date
+    public function checkDate($key, $value, $format = 'Y-m-d') {
+        if (strtotime($value) === false) {
+            $this->errors[$key] =   'Invalid Date';
+        }
+        return trim(htmlspecialchars($value));
+    }
+    // Checks if value is a standard 10 digit US Phone Number
+    public function checkPhone($key, $value) {
+        $phone  =   str_replace('-', '', $value);
+        if (filter_var($phone, FILTER_VALIDATE_INT) === false && strlen($phone) !== 10) {
+            $this->errors[$key] =   'Invalid Phone';
+        }
+        return trim(htmlspecialchars($value));
+    }
     // Gets the array of errors
     public function getErrors() {
         return $this->errors;
