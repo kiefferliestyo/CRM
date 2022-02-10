@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="index.php?page=add-edit-customer">
                         <i class="metismenu-icon pe-7s-rocket"></i>
                         Add Customer
                     </a>
