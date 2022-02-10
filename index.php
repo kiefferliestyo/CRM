@@ -34,7 +34,8 @@ require_once('controllers/' . $page . '.php');
         =========================================================
         * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
         -->
-    <link href="./main.css" rel="stylesheet"></head>
+        <link href="./main.css" rel="stylesheet">
+    </head>
     <body>
         <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
             <?php 
@@ -49,8 +50,11 @@ require_once('controllers/' . $page . '.php');
                     <?php // require_once('templates/footer.php'); ?>  
                     </div>
                 </div>
-                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
             </div>
         </div>
-    <script type="text/javascript" src="./assets/scripts/main.js"></script></body>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./assets/scripts/main.js"></script>
+        <script type="text/javascript" src="./assets/scripts/functions.js"></script>
+    </body>
 </html>
