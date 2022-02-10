@@ -40,7 +40,7 @@ require_once('controllers/' . $page . '.php');
         <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
             <?php 
             require_once('templates/header.php');
-            require_once('templates/ui-options.php'); 
+            // require_once('templates/ui-options.php'); 
             ?>       
             <div class="app-main">  
                 <?php require_once('templates/sidebar.php'); ?>  
