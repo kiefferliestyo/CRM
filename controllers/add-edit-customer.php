@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         $firstName      =   $validate->checkString('FirstName', $_POST['FirstName']);
         $lastName       =   $validate->checkString('LastName', $_POST['LastName']);
         $email          =   $validate->checkEmail('Email', $_POST['Email']);
-        $dob            =   $validate->checkString('DOB', $_POST['DOB']);
-        $phoneNumber    =   $validate->checkInteger('PhoneNumber', str_replace("-", "", $_POST['PhoneNumber']));
+        $dob            =   $validate->checkDate('DOB', $_POST['DOB']);
+        $phoneNumber    =   $validate->checkPhone('PhoneNumber', str_replace("-", "", $_POST['PhoneNumber']));
         // Get the errors again
         $errors =   $validate->getErrors();
         // If it is still empty, insert all the data into the DB and then redirect to the 'Manage Customers' page
