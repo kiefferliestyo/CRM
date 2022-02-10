@@ -22,6 +22,13 @@ class InputValidation {
         }
         return trim(htmlspecialchars($value));
     }
+    // Checks if value is a float
+    public function checkFloat($key, $value) {
+        if (filter_var($value, FILTER_VALIDATE_FLOAT) === false) {
+            $this->errors[$key] =   'Invalid Float.';
+        }
+        return trim(htmlspecialchars($value));
+    }
     // Checks if value is a string
     public function checkString($key, $value) {
         if (!is_string($value)) {
