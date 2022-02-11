@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="index.php?page=add-edit-product">
                         <i class="metismenu-icon pe-7s-car"></i>
                         Add Product
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
