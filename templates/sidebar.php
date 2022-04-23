@@ -75,9 +75,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="index.php?page=add-edit-invoice">
                         <i class="metismenu-icon pe-7s-display2"></i>
-                        Create Invoice
+                        Add Invoice
                     </a>
                 </li>
                 <li class="app-sidebar__heading">Users</li>
