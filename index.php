@@ -59,5 +59,8 @@ require_once('controllers/' . $page . '.php');
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="./assets/scripts/main.js"></script>
         <script type="text/javascript" src="./assets/scripts/functions.js"></script>
+        <?php if (file_exists("assets/scripts/" . $page . "js")) { ?> 
+        <script type="text/javascript" src="./assets/scripts/<?=$page?>.js"></script>
+        <?php } ?>
     </body>
 </html>
