@@ -1,4 +1,6 @@
 <?php
+// Require the functions file
+require_once('configurations/functions.php');
 // Require the DB class file
 require_once('models/DB.php');
 // Instantiate the DB
