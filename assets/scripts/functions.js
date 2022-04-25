@@ -1,5 +1,6 @@
 // Run when document is ready
 $(document).ready(function() {
+    // Simple input mask for phone numbers
     let phoneKeyCodes   =   [8, 35, 36, 37, 38, 39, 40, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
     $('#PhoneNumber').keydown(function(evt) {
         console.log(evt.keyCode);
@@ -7,7 +8,6 @@ $(document).ready(function() {
         if (!phoneKeyCodes.includes(evt.keyCode)) {
             evt.preventDefault();
         }
-        // Simple input mask for phone numbers
         else {
             let inputLength =   $(this).val().length;
             let phoneNumber =   $(this).val();

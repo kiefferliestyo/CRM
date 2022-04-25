@@ -16,8 +16,26 @@ class DB {
         $this->username =   'DeeDee';
     }
     // Get all customers 
-    public function getCustomers() {
-        $query  =   "SELECT * FROM customer ORDER BY LastModified DESC, CreatedOn DESC;";
+    public function getCustomers($limit = 50, $searchValue = NULL, $searchFilter = NULL) {
+        if (!empty($searchValue) && !empty($searchFilter)) {
+            if ($searchFilter == 'FirstName' || $searchFilter == 'LastName' || $searchFilter == 'Email') {
+                $query  =   "SELECT * FROM customer WHERE $searchFilter LIKE '$searchValue%' ";
+            }
+            else {
+                $query  =   "SELECT * FROM customer WHERE $searchFilter = '$searchValue' ";
+            }
+            $query  .=  "ORDER BY $searchFilter ASC ";
+        }
+        else {
+            $query  =   "SELECT * FROM customer ORDER BY LastModified DESC, CreatedOn DESC ";
+        }
+        $query  .=  "LIMIT $limit";
+        $result =   $this->db->query($query);
+        return $result;
+    }
+    // Get customer names based on entered value
+    public function getCustomerName($value) {
+        $query  =   "SELECT FirstName, LastName FROM customer WHERE FirstName LIKE '$value%' OR LastName LIKE '$value%'";
         $result =   $this->db->query($query);
         return $result;
     }

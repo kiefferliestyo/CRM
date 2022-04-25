@@ -1,3 +1,25 @@
 .errorText {
     color: red;
 }
+.search-wrapper.page-search {
+    margin-bottom: 2em;
+    width: 660px;
+}
+.search-wrapper.page-search .input-holder {
+    display: inline-block;
+}
+#SearchValueSelect {
+    width: 85%;
+}
+@media only screen and (max-width: 660px) {
+    .search-wrapper.page-search {
+        width: 100%;
+    }
+    .search-wrapper.page-search .input-holder {
+        display: block;
+        margin-bottom: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+}
