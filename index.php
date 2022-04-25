@@ -56,10 +56,10 @@ require_once('controllers/' . $page . '.php');
                 <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="./assets/scripts/main.js"></script>
         <script type="text/javascript" src="./assets/scripts/functions.js"></script>
-        <?php if (file_exists("assets/scripts/" . $page . "js")) { ?> 
+        <?php if (file_exists("assets/scripts/" . $page . ".js")) { ?> 
         <script type="text/javascript" src="./assets/scripts/<?=$page?>.js"></script>
         <?php } ?>
     </body>
