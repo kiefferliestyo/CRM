@@ -37,4 +37,18 @@ $(document).ready(function(){
             $('#SearchValueSelect').show();
         }
     });
+    // Change the number of rows displayed
+    $('#numRows').on("change", function(){
+        let parts           =   window.location.href.split('?');
+        let page            =   parts[0];
+        let getVariables    =   parts[1].split('&');
+        var redirectURL     =   parts[0] + '?';
+        for (let i = 0; i < getVariables.length; i++) {
+            if (!getVariables[i].includes("pagination")) {
+                redirectURL +=  getVariables[i] + '&';   
+            }
+        }
+        redirectURL             +=  'rows=' + $(this).val();
+        window.location.href    =   redirectURL;
+    });
 });

@@ -16,21 +16,39 @@ class DB {
         $this->username =   'DeeDee';
     }
     // Get all customers 
-    public function getCustomers($limit = 50, $searchValue = NULL, $searchFilter = NULL) {
+    public function getCustomers($limit = 25, $pagination = 1, $searchValue = NULL, $searchFilter = NULL) {
+        $query  =   "SELECT * FROM customer";
         if (!empty($searchValue) && !empty($searchFilter)) {
             if ($searchFilter == 'FirstName' || $searchFilter == 'LastName' || $searchFilter == 'Email') {
-                $query  =   "SELECT * FROM customer WHERE $searchFilter LIKE '$searchValue%' ";
+                $query  .=   " WHERE $searchFilter LIKE '$searchValue%'";
             }
             else {
-                $query  =   "SELECT * FROM customer WHERE $searchFilter = '$searchValue' ";
+                $query  .=   " WHERE $searchFilter = '$searchValue'";
             }
-            $query  .=  "ORDER BY $searchFilter ASC ";
+            $query  .=  " ORDER BY $searchFilter ASC";
         }
         else {
-            $query  =   "SELECT * FROM customer ORDER BY LastModified DESC, CreatedOn DESC ";
+            $query  .=   " ORDER BY LastModified DESC, CreatedOn DESC";
         }
-        $query  .=  "LIMIT $limit";
+        $query  .=  " LIMIT $limit";
+        if ($pagination > 1) {
+            $query .= " OFFSET " . ($limit * ($pagination - 1));
+        }
         $result =   $this->db->query($query);
+        return $result;
+    }
+    // Get the total number of customers currently in the DB
+    public function getCustomerCount($searchValue = NULL, $searchFilter = NULL) {
+        $query  =   "SELECT COUNT(*) AS TotalCustomers FROM customer";
+        if (!empty($searchValue) && !empty($searchFilter)) {
+            if ($searchFilter == 'FirstName' || $searchFilter == 'LastName' || $searchFilter == 'Email') {
+                $query  .=   " WHERE $searchFilter LIKE '$searchValue%'";
+            }
+            else {
+                $query  .=   " WHERE $searchFilter = '$searchValue'";
+            }
+        }
+        $result =   intval($this->db->query($query)->fetch_array(MYSQLI_ASSOC)['TotalCustomers']);
         return $result;
     }
     // Get customer names based on entered value

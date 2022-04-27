@@ -11,6 +11,25 @@
 #SearchValueSelect {
     width: 85%;
 }
+.paginationRows > div {
+    display: inline-block;
+    width: 49%;
+}
+.paginationRows > div:last-child {
+    text-align: right;
+}
+#numRows {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: all .2s;
+}
+
 @media only screen and (max-width: 660px) {
     .search-wrapper.page-search {
         width: 100%;

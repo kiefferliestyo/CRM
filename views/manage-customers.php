@@ -19,7 +19,7 @@
             </select>
         </div>
         <div class="input-holder">
-            <input type="<?php !empty($inputType) && $inputType != 'select' ? $inputType : 'text'?>" id="SearchValue" name="SearchValue" class="search-input" placeholder="Type to search" <?php if (!empty($inputType) && $inputType == 'select') echo 'disabled style="display: none;"'; ?> <?php if (!empty($searchValue)) echo 'value="' . $searchValue . '"'; ?>>
+            <input type="<?php !empty($inputType) && $inputType != 'select' ? $inputType : 'text'?>" id="SearchValue" name="SearchValue" class="search-input" placeholder="Type to search" <?php if (!empty($inputType) && $inputType == 'select') echo 'disabled style="display: none;"'; ?> <?php if (!empty($searchValue) && $inputType != 'select') echo 'value="' . $searchValue . '"'; ?>>
             <select id="SearchValueSelect" name="SearchValue" class="search-input" <?php if ((!empty($inputType) && $inputType != 'select') || empty($inputType)) echo 'disabled style="display: none;"'; ?>>
                 <option value="Active" <?php if ((!empty($inputType) && $inputType == 'select') && (!empty($searchValue) && $searchValue == 'Active')) echo 'selected'; ?>>Active</option>
                 <option value="Inactive" <?php if ((!empty($inputType) && $inputType == 'select') && (!empty($searchValue) && $searchValue == 'Inactive')) echo 'selected'; ?>>Inactive</option>
@@ -70,5 +70,19 @@
                 </table>
             </div>
         </div>
+    </div>
+</div>
+<div class="paginationRows">
+    <div>
+        <?php echo generatePagination($customerCount, $rows, $pagination, $searchString); // Output pagination ?>
+    </div>
+    <div>
+        <label>Rows displayed:</label>
+        <select id="numRows">
+            <option value="25" <?php if ($rows == '25') echo 'selected'; ?>>25</option>
+            <option value="50" <?php if ($rows == '50') echo 'selected'; ?>>50</option>
+            <option value="75" <?php if ($rows == '75') echo 'selected'; ?>>75</option>
+            <option value="100" <?php if ($rows == '100') echo 'selected'; ?>>100</option>
+        </select>
     </div>
 </div>
